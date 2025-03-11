@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import CreatePoll from "./pages/CreatePoll";
+import ViewPoll from "./pages/ViewPoll";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -28,6 +29,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/create" element={<CreatePoll />} />
+            <Route path="/poll/:id" element={<ViewPoll />} />
           </Routes>
         </main>
       </div>
