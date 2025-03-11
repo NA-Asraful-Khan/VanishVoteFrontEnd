@@ -1,7 +1,9 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import CreatePoll from "./pages/CreatePoll";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -22,6 +24,12 @@ function App() {
         }`}
       >
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+        <main className="container mx-auto px-4 py-8">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/create" element={<CreatePoll />} />
+          </Routes>
+        </main>
       </div>
     </Router>
   );
